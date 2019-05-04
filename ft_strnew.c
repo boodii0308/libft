@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/29 10:44:27 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/01 20:49:09 by tebatsai         ###   ########.fr       */
+/*   Created: 2019/05/03 19:28:48 by tebatsai          #+#    #+#             */
+/*   Updated: 2019/05/03 20:49:30 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+char	*ft_strnew(size_t size)
 {
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n = -n;
-	}
-	if (n / 10)
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 + '0');
+	char *c;
+
+	if (!(c = (char*)malloc(sizeof(char) * size + 1)))
+		return (NULL);
+	ft_bzero(c, size + 1);
+	return (c);
 }

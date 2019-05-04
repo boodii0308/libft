@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/29 10:44:27 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/01 20:49:09 by tebatsai         ###   ########.fr       */
+/*   Created: 2019/05/02 22:01:06 by tebatsai          #+#    #+#             */
+/*   Updated: 2019/05/03 18:03:32 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (n < 0)
+	int		i;
+	int		j;
+	char	*fresh;
+
+	i = 0;
+	j = 0;
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
+	if (!(fresh = (char*)malloc(sizeof(char) * (i + j) + 1)))
+		return (0);
+	i = -1;
+	j = -1;
+	while (s1[++i])
+		fresh[i] = s1[i];
+	while (s2[++j])
 	{
-		ft_putchar('-');
-		n = -n;
+		fresh[i] = s2[j];
+		i++;
 	}
-	if (n / 10)
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 + '0');
+	fresh[i] = '\0';
+	return (fresh);
 }

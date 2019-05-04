@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/29 10:44:27 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/01 20:49:09 by tebatsai         ###   ########.fr       */
+/*   Created: 2019/05/02 23:41:32 by tebatsai          #+#    #+#             */
+/*   Updated: 2019/05/03 16:32:14 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (n < 0)
+	unsigned int	i;
+	char			*t;
+
+	i = 0;
+	if (s == NULL || f == NULL)
+		return (0);
+	if (!(t = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (0);
+	while (s[i])
 	{
-		ft_putchar('-');
-		n = -n;
+		t[i] = f(i, s[i]);
+		i++;
 	}
-	if (n / 10)
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 + '0');
+	t[i] = '\0';
+	return (t);
 }
