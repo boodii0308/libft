@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 12:34:08 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/03 23:08:57 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/11 20:47:23 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_atoi(const char *s);
 char	*ft_itoa(int n);
@@ -44,7 +52,8 @@ int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strdup(const char *str);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
+size_t	ft_strnlen(const char *s, size_t len);
 char	*ft_strncat(char *dest, const char *src, size_t n);
 void	ft_memdel(void **ap);
 void	*ft_memalloc(size_t size);
@@ -75,4 +84,6 @@ void	ft_putstr(const char *s);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
+t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem));
+t_list	*ft_lstnew(void const *content, size_t content_size);
 #endif

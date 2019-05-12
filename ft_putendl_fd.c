@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 13:02:23 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/03 18:01:40 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/10 15:00:26 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar('\n');
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }

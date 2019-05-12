@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 10:40:23 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/01 19:40:14 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/09 19:21:40 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ char	*ft_strcat(char *dest, const char *src)
 	while (*dest)
 		dest++;
 	while (*src)
-		*dest++ = *src++;
+	{
+		*dest = *src++;
+		dest++;
+	}
+	*dest = '\0';
 	return (c);
 }

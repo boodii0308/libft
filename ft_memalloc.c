@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:26:06 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/03 21:01:38 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/10 12:11:05 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_memalloc(size_t size)
 {
-	char *c;
+	void *c;
 
-	if (!(c = (char*)malloc(sizeof(char) * size + 1)))
+	if (!(c = malloc(size)))
 		return (NULL);
-	c = NULL;
+	ft_bzero(c, size);
 	return (c);
 }

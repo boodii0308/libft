@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/30 17:33:17 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/11 00:29:17 by tebatsai         ###   ########.fr       */
+/*   Created: 2019/05/11 00:22:58 by tebatsai          #+#    #+#             */
+/*   Updated: 2019/05/11 00:32:12 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+size_t	ft_strnlen(const char *s, size_t len)
 {
 	size_t i;
 
 	i = 0;
-	while (str[i])
+	while (i < len && s[i])
 		i++;
 	return (i);
 }

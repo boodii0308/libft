@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 22:16:53 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/03 17:55:38 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/10 18:49:33 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*c;
 
 	i = 0;
-	if (!(c = (char*)malloc(sizeof(char) * len)))
+	if (len == 0)
+		return (NULL);
+	if (!(c = (char*)malloc(sizeof(char) * len + 1)))
 		return (0);
 	while (i < len)
 	{

@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:22:21 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/03 21:06:18 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/10 12:47:15 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-	char *c;
-
-	c = *ap;
-	if (c != NULL)
+	if (ap)
 	{
-		free(c);
-		c = NULL;
+		free(*ap);
+		*ap = NULL;
 	}
 }
