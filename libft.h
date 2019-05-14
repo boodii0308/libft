@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 12:34:08 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/13 03:52:34 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/13 22:06:15 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct		s_list
 
 int					ft_atoi(const char *s);
 char				*ft_itoa(int n);
-void				ft_bzero(char *s, int n);
+void				ft_bzero(void *s, size_t n);
 int					ft_isitspace(char s);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
@@ -61,12 +61,12 @@ char				*ft_strnew(size_t size);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
-char				*strrchr(const char *str, int c);
+char				*ft_strrchr(const char *str, int c);
 char				*ft_strstr(const char *s1, const char *s2);
 int					ft_toupper(int c);
 void				ft_strclr(char *s);
 void				ft_strdel(char **as);
-int					ft_toupper(int c);
+int					ft_tolower(int c);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putchar(char c);
