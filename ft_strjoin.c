@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 22:01:06 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/03 18:03:32 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/13 23:36:52 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	while (s1[i])
 		i++;
 	while (s2[j])

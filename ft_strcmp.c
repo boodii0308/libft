@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 14:52:38 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/11 00:43:24 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/13 23:11:54 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,9 @@ int		ft_strcmp(const char *s1, const char *s2)
 		s1++;
 		s2++;
 	}
-	return (*(unsigned char *)s1 < *(unsigned char *)s2 ? -1 : 1);
+	if (*s1 != *s2)
+		return (*(unsigned char *)s1 < *(unsigned char *)s2 ? -1 : 1);
+	else if (*s1 == '\0' || *s2 == '\0')
+		return (*(unsigned char *)s1 < *(unsigned char *)s2 ? -1 : 1);
+	return (0);
 }
