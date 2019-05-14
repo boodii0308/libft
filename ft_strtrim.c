@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 20:58:13 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 15:48:43 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 16:50:31 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,26 @@ char		*ft_strtrim(char const *s)
 
 	i = 0;
 	g = 0;
-	len = back(s);
-	if (s == NULL)
+	if (s)
+	{
+		len = back(s);
+		while (ft_isitspace(s[i]))
+		{
+			i++;
+			if (s[i] == '\0')
+				len = i;
+		}
+		if (!(c = (char*)malloc(sizeof(char) * (len + 2) - i)))
+			return (0);
+		while (i <= len)
+		{
+			c[g] = s[i];
+			i++;
+			g++;
+		}
+		c[g] = '\0';
+		return (c);
+	}
+	else
 		return (NULL);
-	while (ft_isitspace(s[i]))
-	{
-		i++;
-		if (s[i] == '\0')
-			len = i;
-	}
-	if (!(c = (char*)malloc(sizeof(char) * (len + 2) - i)))
-		return (0);
-	while (i <= len)
-	{
-		c[g] = s[i];
-		i++;
-		g++;
-	}
-	c[g] = '\0';
-	return (c);
 }

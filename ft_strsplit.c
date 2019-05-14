@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 16:36:16 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/13 23:58:43 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 16:50:03 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,20 @@ char			**ft_strsplit(char const *s, char c)
 
 	I = 0;
 	J = 0;
-	len = lenght(s, c);
-	if (s == NULL || !(ft_isascii(c)))
-		return (NULL);
-	if (!(t = (char**)malloc(sizeof(char*) * len + 1)))
-		return (0);
-	while (I < len)
+	t = NULL;
+	if (s)
 	{
-		J = split(t, s, ij, c);
-		I++;
+		len = lenght(s, c);
+		if (!(t = (char**)malloc(sizeof(char*) * len + 1)))
+			return (0);
+		while (I < len)
+		{
+			J = split(t, s, ij, c);
+			I++;
+		}
+		t[I] = 0;
+		return (t);
 	}
-	t[I] = 0;
-	return (t);
+	else
+		return (NULL);
 }
