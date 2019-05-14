@@ -6,17 +6,20 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 15:38:30 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/01 19:03:31 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/13 22:11:12 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(char *s, int n)
+void	ft_bzero(void *s, size_t n)
 {
+	unsigned char *t;
+
+	t = s;
 	while (n--)
 	{
-		*s = '\0';
+		*t = '\0';
 		s++;
 	}
 }
