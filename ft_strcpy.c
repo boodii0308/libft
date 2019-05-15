@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 17:47:35 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 15:59:49 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 23:26:09 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	if (src == NULL)
-		return (dest);
-	ft_memcpy(dest, src, ft_strlen(src) + 1);
+	unsigned int i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = src[i];
 	return (dest);
 }
