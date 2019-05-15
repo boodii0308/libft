@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 12:34:08 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 23:05:57 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 23:17:22 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-
+void				ft_putendl(char const *s)
 int					ft_atoi(const char *s);
 char				*ft_itoa(int n);
 void				ft_bzero(void *s, size_t n);
