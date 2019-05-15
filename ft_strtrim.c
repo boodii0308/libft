@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 20:58:13 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 16:50:31 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 17:03:55 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char		*ft_strtrim(char const *s)
 				len = i;
 		}
 		if (!(c = (char*)malloc(sizeof(char) * (len + 2) - i)))
-			return (0);
+			return (NULL);
 		while (i <= len)
 		{
 			c[g] = s[i];

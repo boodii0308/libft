@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 16:36:16 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 16:50:03 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 17:04:26 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		len = lenght(s, c);
 		if (!(t = (char**)malloc(sizeof(char*) * len + 1)))
-			return (0);
+			return (NULL);
 		while (I < len)
 		{
 			J = split(t, s, ij, c);
