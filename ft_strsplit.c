@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 16:36:16 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 17:04:26 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 17:08:08 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int		split(char **t, const char *s, int *ij, char c)
 	n = useless(s, c, J);
 	l = len(s, c, n);
 	if (!(t[I] = (char*)malloc(sizeof(char) * l + 1)))
-		return (0);
+		return (NULL);
 	while (m < l)
 	{
 		t[I][m] = s[n + m];
