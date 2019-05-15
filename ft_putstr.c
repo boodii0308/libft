@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 10:57:50 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 21:23:44 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 22:29:27 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr(char const *s)
 {
-	if(!s)
+	if (!s)
 		return ;
 	write(1, s, ft_strlen(s));
 }

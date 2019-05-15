@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 02:50:28 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 21:32:31 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 22:35:11 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if ((*lst).next)
-		ft_lstiter((*lst).next, f);
-	f(lst);
+	if (!lst)
+		return ;
+	while (lst)
+	{
+		(*f)(lst);
+		lst = lst->next;
+	}
 }
