@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 20:58:13 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/15 16:43:30 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/15 16:58:54 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char		*ft_strtrim(char const *s)
 
 	i = 0;
 	g = 0;
+	if (!s)
+		return (NULL);
 	len = back(s);
 	while (ft_isitspace(s[i]))
 	{
