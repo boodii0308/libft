@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 20:58:13 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 20:43:47 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/15 16:43:30 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	back(const char *s)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 		i++;
 	i--;
@@ -34,22 +36,17 @@ char		*ft_strtrim(char const *s)
 
 	i = 0;
 	g = 0;
-	if (s)
+	len = back(s);
+	while (ft_isitspace(s[i]))
 	{
-		len = back(s);
-		while (ft_isitspace(s[i]))
-		{
-			i++;
-			if (s[i] == '\0')
-				len = i;
-		}
-		if (!(c = (char*)malloc(sizeof(char) * (len + 2) - i)))
-			return (NULL);
-		while (i <= len)
-			c[g++] = s[i++];
-		c[g] = '\0';
-		return (c);
+		i++;
+		if (s[i] == '\0')
+			len = i;
 	}
-	else
+	if (!s || !(c = (char*)malloc(sizeof(char) * (len + 2) - i)))
 		return (NULL);
+	while (i <= len)
+		c[g++] = s[i++];
+	c[g] = '\0';
+	return (c);
 }
