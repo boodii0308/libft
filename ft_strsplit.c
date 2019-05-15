@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 16:36:16 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 18:17:57 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/15 16:36:58 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int		lenght(const char *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (0);
 	while (s[j])
 	{
 		if (j == 0 && s[j] != c)
@@ -78,20 +80,14 @@ char			**ft_strsplit(char const *s, char c)
 
 	I = 0;
 	J = 0;
-	t = NULL;
-	if (s)
-	{
-		len = lenght(s, c);
-		if (!(t = (char**)malloc(sizeof(char*) * len + 1)))
-			return (NULL);
-		while (I < len)
-		{
-			J = split(t, s, ij, c);
-			I++;
-		}
-		t[I] = 0;
-		return (t);
-	}
-	else
+	len = lenght(s, c);
+	if (!s || !(t = (char**)malloc(sizeof(char*) * len + 1)))
 		return (NULL);
+	while (I < len)
+	{
+		J = split(t, s, ij, c);
+		I++;
+	}
+	t[I] = 0;
+	return (t);
 }
