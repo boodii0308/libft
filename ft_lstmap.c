@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 20:40:52 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/14 21:42:03 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/14 22:24:32 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	while (lst->next)
 	{
 		lst = lst->next;
-		if (!(node->next = (*f)(lst)))
+		if (!(begin->next = (*f)(lst)))
 		{
-			free(node->next);
+			free(begin->next);
 			return (NULL);
 		}
-		node = node->next;
+		begin = begin->next;
 	}
 	return (head);
 }
