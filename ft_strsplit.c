@@ -6,12 +6,12 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 16:36:16 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/15 20:09:31 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/15 20:15:11 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-:wq
+
 static int		find_wd_count(const char *s, char d)
 {
 	int			position;
