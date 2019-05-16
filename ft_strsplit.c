@@ -6,88 +6,70 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 16:36:16 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/15 16:41:49 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/15 20:09:31 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int		lenght(const char *s, char c)
+:wq
+static int		find_wd_count(const char *s, char d)
 {
-	int i;
-	int j;
+	int			position;
+	int			nb;
 
-	i = 0;
-	j = 0;
-	if (!s)
-		return (0);
-	while (s[j])
+	position = 0;
+	nb = 0;
+	while (*s != '\0')
 	{
-		if (j == 0 && s[j] != c)
-			i++;
-		if (s[j] == c && s[j + 1] != c && s[j + 1] != '\0')
-			i++;
-		j++;
+		if (*s != d && position == 0)
+		{
+			position = 1;
+			nb++;
+		}
+		if (*s == d && position == 1)
+			position = 0;
+		s++;
 	}
-	return (i);
+	return (nb);
 }
 
-static int		len(const char *s, char n, int j)
+static int		find_wd_len(const char *s, char d)
 {
-	int i;
+	int			len;
 
-	i = 0;
-	while (s[j + i] != n)
-		i++;
-	return (i);
-}
-
-static int		useless(const char *s, char c, int j)
-{
-	int i;
-
-	i = 0;
-	while (s[j + i] == c)
-		i++;
-	return (j + i);
-}
-
-static int		split(char **t, const char *s, int *ij, char c)
-{
-	int m;
-	int l;
-	int n;
-
-	m = 0;
-	n = useless(s, c, J);
-	l = len(s, c, n);
-	if (!(t[I] = (char*)malloc(sizeof(char) * l + 1)))
-		return (0);
-	while (m < l)
+	len = 0;
+	while (*s != '\0' && *s != d)
 	{
-		t[I][m] = s[n + m];
-		m++;
+		len++;
+		s++;
 	}
-	t[I][m++] = '\0';
-	return (l + n);
+	return (len);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	int		ij[2];
-	int		len;
-	char	**t;
+	char		**str;
+	int			wd;
+	int			i;
 
-	I = 0;
-	J = 0;
-	len = lenght(s, c);
-	if (!s || !(t = (char**)malloc(sizeof(char*) * len + 1)))
+	i = 0;
+	if (!s)
+		return (0);
+	wd = find_wd_count(s, c);
+	str = (char**)malloc(sizeof(*str) * (find_wd_count(s, c) + 1));
+	if (str == NULL)
 		return (NULL);
-	while (I < len)
+	while (wd > 0)
 	{
-		J = split(t, s, ij, c);
-		I++;
+		while (*s == c && *s != '\0')
+			s++;
+		str[i] = ft_strsub(s, 0, find_wd_len(s, c));
+		if (str[i] == NULL)
+			return (NULL);
+		s = s + find_wd_len(s, c);
+		i++;
+		wd--;
 	}
-	t[I] = 0;
-	return (t);
+	str[i] = NULL;
+	return (str);
 }
