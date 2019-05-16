@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 22:01:06 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/13 23:36:52 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/15 17:10:33 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[j])
 		j++;
 	if (!(fresh = (char*)malloc(sizeof(char) * (i + j) + 1)))
-		return (0);
+		return (NULL);
 	i = -1;
 	j = -1;
 	while (s1[++i])

@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:20:01 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/10 15:22:25 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/15 17:11:56 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char			*ft_itoa(int n)
 		len++;
 	}
 	if (!(s = (char *)malloc(sizeof(char) * len + 1)))
-		return (0);
+		return (NULL);
 	s[len] = '\0';
 	s[--len] = i % 10 + '0';
 	while (i /= 10)
