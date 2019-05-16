@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 20:41:02 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/15 20:57:09 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/16 14:16:59 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strtoupper(char *s)
 	n = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	while (s[i])
 	{
-		if (s[i] >= 'A' && s[i] <= 'Z')
+		if (s[i] >= 'a' && s[i] <= 'z')
 			n[i] = s[i] - 32;
 		else
 			n[i] = s[i];
