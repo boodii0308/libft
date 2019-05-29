@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 12:34:08 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/15 20:51:14 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/05/25 20:43:30 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <fcntl.h>
 
 typedef struct		s_list
 {
@@ -91,4 +92,6 @@ char				*ft_strtoupper(char *s);
 char				*ft_strtolower(char *s);
 int					ft_isitbase(char c);
 char				**ft_create_arr(int x, int y);
+char				*ft_strndup(const char *s1, size_t n);
+size_t				ft_strclen(const char *s, int c);
 #endif
