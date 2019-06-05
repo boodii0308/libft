@@ -6,7 +6,7 @@
 /*   By: tebatsai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 12:34:08 by tebatsai          #+#    #+#             */
-/*   Updated: 2019/05/25 20:43:30 by tebatsai         ###   ########.fr       */
+/*   Updated: 2019/06/04 22:06:32 by tebatsai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define I ij[0]
 # define J ij[1]
+# define BUFF_SIZE 1
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -94,4 +95,6 @@ int					ft_isitbase(char c);
 char				**ft_create_arr(int x, int y);
 char				*ft_strndup(const char *s1, size_t n);
 size_t				ft_strclen(const char *s, int c);
+int					get_next_line(const int fd, char **line);
+void				ft_lstpush(t_list **lst, t_list *new);
 #endif
